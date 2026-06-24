@@ -28,4 +28,17 @@ sequenceDiagram
 
     Note right of browser: The browser executes the callback function that renders the notes
 
+    Note right of browser: User submits a new note.
+
+    Note right of browser: JavaScript intercepts the submit event and prevents the default behavior.
+
+    Note right of Browser: The new note is added locally and the page is redrawn.
+
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/notes/new-note-spa
+    activate server
+    server-->>browser: HTTP 201 Created
+    deactivate server
+
+    Note right of browser: The page is redrawn with the new note and not reloaded.    
+
 '''
