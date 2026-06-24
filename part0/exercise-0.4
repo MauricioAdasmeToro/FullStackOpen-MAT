@@ -28,12 +28,12 @@ sequenceDiagram
 
     Note right of browser: The browser executes the callback function that renders the notes
 
-    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/notes/new-note
+    browser->>server: POST https://studies.cs.helsinki.fi/exampleapp/new-note
     activate server
     Note right of server: JSON body with new note
     server-->>browser: HTTP 201 Created
     deactivate server
 
-    Note right of server: New note created. Browser refresh the page.
+    Note right of server: New note created. Browser reloads the page.
     
 '''
